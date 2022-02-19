@@ -1,54 +1,26 @@
+package dsa;
+
 import java.util.Scanner;
 
-public class DioGFT4Troco {
+public class Money {
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
-        double N;
         int resto;
-
+        double N;
         N = sc.nextDouble();
-
         resto = (int) (N * 100.0 + 0.5);
 
         System.out.println("NOTAS:");
-
         var notas = new int[]{100, 50, 20, 10, 5, 2};
-
         for (var nota : notas)
             resto = notasResto(resto,nota);
 
-        /*resto = notasResto(resto,100);
-
-        resto = notasResto(resto,50);
-
-        resto = notasResto(resto,20);
-
-        resto = notasResto(resto,10);
-
-        resto = notasResto(resto,5);
-
-        resto = notasResto(resto,2);*/
-
         System.out.println("MOEDAS:");
-
         var moedas = new int[]{100, 50, 25, 10, 5};
-
         for (var moeda : moedas)
-            resto = notasResto(resto,moeda);
-
-        /*resto = moedasResto(resto, 100);
-
-        resto = moedasResto(resto, 50);
-
-        resto = moedasResto(resto, 25);
-
-        resto = moedasResto(resto, 10);
-
-        resto = moedasResto(resto, 5);*/
-
+            resto = moedasResto(resto,moeda);
         System.out.println(resto + " moeda(s) de R$ 0.01");
 
         sc.close();
@@ -68,6 +40,33 @@ public class DioGFT4Troco {
         return resto;
     }
 }
+
+/*
+
+/*resto = notasResto(resto,100);
+
+resto = notasResto(resto,50);
+
+resto = notasResto(resto,20);
+
+resto = notasResto(resto,10);
+
+resto = notasResto(resto,5);
+
+resto = notasResto(resto,2);
+
+resto = moedasResto(resto, 100);
+
+resto = moedasResto(resto, 50);
+
+resto = moedasResto(resto, 25);
+
+resto = moedasResto(resto, 10);
+
+resto = moedasResto(resto, 5);
+
+ */
+
 
 /*
 
