@@ -42,6 +42,23 @@ public class Money {
 }
 
 /*
+Input: 576,73
+Output:
+NOTAS:
+5 nota(s) de R$ 100.00
+1 nota(s) de R$ 50.00
+1 nota(s) de R$ 20.00
+0 nota(s) de R$ 10.00
+1 nota(s) de R$ 5.00
+0 nota(s) de R$ 2.00
+MOEDAS:
+1 moeda(s) de R$ 1,00
+1 moeda(s) de R$ 0,50
+0 moeda(s) de R$ 0,25
+2 moeda(s) de R$ 0,10
+0 moeda(s) de R$ 0,05
+3 moeda(s) de R$ 0.01
+*/
 
 /*resto = notasResto(resto,100);
 
@@ -65,10 +82,7 @@ resto = moedasResto(resto, 10);
 
 resto = moedasResto(resto, 5);
 
- */
-
-
-/*
+---
 
 import java.util.Scanner;
 
@@ -117,7 +131,6 @@ public class Main {
 		System.out.println(quociente + " nota(s) de R$ " + nota + ".00");
 		resto = resto % (nota * 100);
 
-
 		System.out.println("MOEDAS:");
 
 		moeda = 100;
@@ -150,5 +163,4 @@ public class Main {
 		sc.close();
 	}
 }
-
- */
+*/

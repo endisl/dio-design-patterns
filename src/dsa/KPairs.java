@@ -24,7 +24,6 @@ public class KPairs {
         //Case 3 : target=12  R/1
         //list.addAll(Arrays.asList(6,12,3,9,3,5,1));  //If profit=target/2, I need to make sure that the array has two identical profits
 
-
         //Set<Integer> set = new HashSet<>(list);
 
         Map<Integer, Integer> map = new HashMap<>();
@@ -40,10 +39,46 @@ public class KPairs {
         var result = stockPairs(list, 12);
         System.out.println(result);
         //System.out.println(Arrays.toString(list));
-
     }
 
-    /*public static int stockPairs(List<Integer> stocksProfit, int target)
+    //111121 case3 has a ruthless edge case
+    public static int stockPairs(List<Integer> stocksProfit, long target)
+    {
+        //constraints
+        //if(constraints_toImplement)
+        //    return 0:
+
+        //Set<Integer> set = new HashSet<>(stocksProfit);
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (var profit: stocksProfit) {
+            var count = map.getOrDefault(profit, 0);
+            map.put(profit, count + 1);
+        }
+
+        int result = 0;
+
+        for (var profit : stocksProfit) {
+            var complement = target-profit;
+
+            if (map.containsKey((int) complement))  //I need this "if" for case1 in order to avoid nullPointerException after checking the complement of the second "6" profit
+            {
+                if (profit*2 == target && map.get(profit) >=2 ) { //for case3
+                    result++;
+                    map.remove(profit);
+                }
+                else if (profit*2 != target) {
+                    result++;
+                    map.remove(profit); //if this key exists
+                    map.remove((int) complement);
+                }
+            }
+        }
+        return result;
+    }
+}
+
+ /*public static int stockPairs(List<Integer> stocksProfit, int target)
     {
         int[] nums = new int[stocksProfit.size()];
 
@@ -87,40 +122,3 @@ public class KPairs {
         return answer;
     //LeetCode 532 (similar problem)
     }*/
-
-    //111121 case3 has a ruthless edge case
-    public static int stockPairs(List<Integer> stocksProfit, long target)
-    {
-        //constraints
-        //if(constraints_toImplement)
-        //    return 0:
-
-        //Set<Integer> set = new HashSet<>(stocksProfit);
-
-        Map<Integer, Integer> map = new HashMap<>();
-        for (var profit: stocksProfit) {
-            var count = map.getOrDefault(profit, 0);
-            map.put(profit, count + 1);
-        }
-
-        int result = 0;
-
-        for (var profit : stocksProfit) {
-            var complement = target-profit;
-
-            if (map.containsKey((int) complement))  //I need this "if" for case1 in order to avoid nullPointerException after checking the complement of the second "6" profit
-            {
-                if (profit*2 == target && map.get(profit) >=2 ) { //for case3
-                    result++;
-                    map.remove(profit);
-                }
-                else if (profit*2 != target) {
-                    result++;
-                    map.remove(profit); //if this key exists
-                    map.remove((int) complement);
-                }
-            }
-        }
-        return result;
-    }
-}
