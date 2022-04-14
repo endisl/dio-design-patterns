@@ -73,7 +73,7 @@ They can be removed nine ways, as follows:
 
 ## Robot
 
-[Desciption and Python version](https://github.com/endisl/ada-challenges/blob/main/robot.py)
+[Description and Python version](https://github.com/endisl/ada-challenges/blob/main/robot.py)
 
 ## Secret Board
 
