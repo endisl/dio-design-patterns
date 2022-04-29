@@ -32,7 +32,7 @@ In each move, a knight moves either:
 - 2 column positions and 1 row position  
 - 2 row positions and 1 colummn position  
 
-In other words, a move is 2 steps along one axis and 1 step along aperpendicular axis.  
+In other words, a move is 2 steps along one axis and 1 step along a perpendicular axis.  
 Given a starting position A and ending position B, calculate the minimum number of moves needed by the knight to move from A to B if it is possible. If it is not possible, return -1.  
 Input:  
 n = 9  
